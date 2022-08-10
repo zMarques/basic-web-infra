@@ -26,7 +26,7 @@ ultilizei as ferramentas Terraform e Ansible para fazer a automação
 
 ## Passo 2
 
-### Configurar o Backend do Terraform
+#### Configurar o Backend do Terraform
 
 na aws va em S3 e crie um bucket,
 em seguida no arquivo ./main.tf substitua os valores pelos do seu bucket criado
@@ -39,7 +39,7 @@ backend "s3" {
   }
 ```
 
-### Em seguida inicie o backend com o comando:
+#### Em seguida inicie o backend com o comando:
 
 ```bash
 $ terraform init
