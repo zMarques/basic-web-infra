@@ -15,3 +15,5 @@ crash.log
 crash.*.log
 
 hosts
+
+env.tfvars
