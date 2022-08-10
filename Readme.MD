@@ -86,7 +86,7 @@ No root do diretorio crie o arquivo env.tfvars
 Coloque dentro dele a chave ssh publica que vc usara para acessar a maquina
 
 ```
-ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOQrAX5x51HDI /ZLW8PklL7ZWpYX9WClsi19a0uVBZA+bGM+B7zkEFbZiEQilclQZSzGhyJjcU1bxdhOPVnOXLDwAgJlJ1l0x0+YlDZll+7EPpEj1aAXBKQGQGf9fqoHnpcP3K2JHNJ1OH88UUHcWR/19GDTZoVXE4uJQ+f5it+U+Xvb1woKExaJCJ16wlacl16Gawni0W5D5wcXNt+1E2IirzOUD/wDzlxBJg/+stQKlf57un70yhT4lo5oKdPVWQJUq68Btxe7sei5zPYPlyacRa2aviItcRRjcVpjFXytIADsGyD1jnwIQh17BnuRjgcfRtXNjn143Qj8xivtxQzawdGh8Y4A153HIXt73yonWtdlbGhez/wUEaL3V2fApYktJxgHz3z4GvKfSiVnRIsxfRGVIUgYYGd740wK8ZJ3cfodNZ19bh80/7ueTYE7l/Vs3reQIzDsG6YSawdgZlNQ0U1EkJ/twOaKlNG5i7g0VYJ4Bkr+LDhvniaDISoITO66M= zmarques@Exemplo"
+ssh_public_key = "ssh-rsa AAAAB3NzaC1y3yonWt/* */niaDISoITO66M= zmarques@Exemplo"
 ```
 
 ## Passo 5
