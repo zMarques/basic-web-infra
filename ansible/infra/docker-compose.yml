@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+
+  nginx-proxy:
+    container_name: nginx-proxy
+    image: jwilder/nginx-proxy
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - nginx-certs:/etc/nginx/certs
+      - nginx-vhost:/etc/nginx/vhost.d
+      - nginx-html:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/custom_proxy_settings.conf
+    networks:
+      cartalogo_network:
+
+
+  letsencrypt:
+    container_name: letsencrypt
+    depends_on:
+      - nginx-proxy
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: always
+    environment:
+      NGINX_PROXY_CONTAINER: 'nginx-proxy'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - nginx-certs:/etc/nginx/certs
+      - nginx-vhost:/etc/nginx/vhost.d
+      - nginx-html:/usr/share/nginx/html
+    networks:
+      cartalogo_network:
+
+
+networks:
+  cartalogo_network:
+
+
+volumes:
+  nginx-certs:
+  nginx-vhost:
+  nginx-html:
+  mariadbvolume:
+
+

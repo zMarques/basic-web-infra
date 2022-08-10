@@ -1,0 +1,17 @@
+---
+- name: infra-containers
+  hosts: all
+  become: true
+
+  tasks:
+
+    - name: Copy infra files
+      copy:
+        src: ./infra
+        dest: /home/ubuntu
+        mode: 0644
+
+    - name: run infra
+      community.docker.docker_compose:
+        project_src: /home/ubuntu/infra
+        state: present
