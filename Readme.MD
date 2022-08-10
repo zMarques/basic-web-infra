@@ -15,7 +15,7 @@ ultilizei as ferramentas Terraform e Ansible para fazer a automação
 
 #### Login na AWS CLI
 
-```
+```bash
   $ aws configure
 
   AWS Access Key ID [None]: ***********
@@ -31,7 +31,7 @@ ultilizei as ferramentas Terraform e Ansible para fazer a automação
 na aws va em S3 e crie um bucket,
 em seguida no arquivo ./main.tf substitua os valores pelos do seu bucket criado
 
-```
+``` tf
 backend "s3" {
     region = "us-east-1" # AWS bucket region
     bucket = "bucket-name" # S3 bucket name
@@ -41,8 +41,8 @@ backend "s3" {
 
 ### Em seguida inicie o backend com o comando:
 
-```
-terraform init
+```bash
+$ terraform init
 ```
 
 ## Passo 3
@@ -51,7 +51,7 @@ terraform init
 
 no arquivo /variables.tf mude as variaveis caso precise
 
-```
+``` tf
 variable "aws_region" {
   type        = string
   description = "região onde sera provisionada"
@@ -85,19 +85,19 @@ No root do diretorio crie o arquivo env.tfvars
 
 Coloque dentro dele a chave ssh publica que vc usara para acessar a maquina
 
-```
+``` bash
 ssh_public_key = "ssh-rsa AAAAB3NzaC1y3yonWt/* */niaDISoITO66M= zmarques@Exemplo"
 ```
 
 ## Passo 5
 
 #### Iniciar o Terraform
-```
-terraform apply -var-file=env.tfvars --auto-approve
+``` bash
+$ terraform apply -var-file=env.tfvars --auto-approve
 ```
 
 apos a execuçao sera provisionada a infra e o IP sera mostrado
-```
+``` bash
 Outputs:
 
 instace_ip = "18.215.24.23" #example
