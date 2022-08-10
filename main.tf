@@ -1,8 +1,8 @@
 terraform {
 
   backend "s3" {
-    region = "us-east-1"
-    bucket = "codehall-cartalogo-tf-state"
+    region = "us-east-1" # AWS region
+    bucket = "bucket-name" # S3 bucket name
     key    = "terraform.tfstate"
   }
 
