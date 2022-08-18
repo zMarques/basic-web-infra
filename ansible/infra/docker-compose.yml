@@ -16,7 +16,7 @@ services:
       - nginx-html:/usr/share/nginx/html
       - ./custom_proxy_settings.conf:/etc/nginx/conf.d/custom_proxy_settings.conf
     networks:
-      cartalogo_network:
+      infra_network:
 
 
   letsencrypt:
@@ -33,17 +33,16 @@ services:
       - nginx-vhost:/etc/nginx/vhost.d
       - nginx-html:/usr/share/nginx/html
     networks:
-      cartalogo_network:
+      infra_network:
 
 
 networks:
-  cartalogo_network:
+  infra_network:
 
 
 volumes:
   nginx-certs:
   nginx-vhost:
   nginx-html:
-  mariadbvolume:
 
 
